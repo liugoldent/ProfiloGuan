@@ -4,7 +4,7 @@
       :collapse="isCollapse"
       @close="handleClose"
       @open="handleOpen"
-      default-active="1-4-1"
+      default-active="1-5-1"
       class="el-menu-vertical"
     >
       <el-submenu index="1">
@@ -16,18 +16,28 @@
           <el-menu-item index="1-1">
             <nuxt-link to="Piano">鋼琴</nuxt-link>
           </el-menu-item>
-          <el-menu-item index="1-2">節拍器</el-menu-item>
+          <el-menu-item index="1-2"
+            ><nuxt-link to="Metronome">節拍器</nuxt-link></el-menu-item
+          >
         </el-menu-item-group>
       </el-submenu>
       <el-menu-item index="2">
-        <i class="el-icon-camera"></i>
-        <span slot="title">Photo</span>
+        <nuxt-link to="Photo">
+          <i class="el-icon-camera"></i>
+          <span slot="title">Photo</span>
+        </nuxt-link>
       </el-menu-item>
       <el-menu-item index="3">
         <i class="el-icon-s-custom"></i>
         <span slot="title">About Me</span>
       </el-menu-item>
       <el-menu-item index="4">
+        <nuxt-link to="Movie">
+          <i class="el-icon-video-camera"></i>
+          <span slot="title">Movie</span>
+        </nuxt-link>
+      </el-menu-item>
+      <el-menu-item index="5">
         <nuxt-link to="/">
           <i class="el-icon-s-home"></i>
           <span slot="title">Home</span>
@@ -43,7 +53,7 @@
 }
 
 #app {
-  top: 5vh;
+  top: 20vh;
   z-index: 1;
   position: absolute;
   opacity: 0.2;
@@ -58,6 +68,7 @@
 <script>
 /* eslint-disable */
 export default {
+  name: 'Guide',
   props: {},
   data() {
     return {

@@ -1,0 +1,18 @@
+{
+  "First": {
+    "Img1": "https://thumbs2.imgbox.com/07/fd/gRIvyezo_t.jpg",
+    "Img2": "https://thumbs2.imgbox.com/3e/33/Yetyca7h_t.jpg",
+    "Img3": "https://thumbs2.imgbox.com/70/57/dGRoyejm_t.jpg",
+    "Img4": "https://thumbs2.imgbox.com/26/2d/yWiHWjXj_t.jpg",
+    "Img5": "https://thumbs2.imgbox.com/3b/fb/aCjPWFzF_t.jpg",
+    "Img6": "https://thumbs2.imgbox.com/fc/5c/sG7CtSX9_t.jpg"
+  },
+  "home": {
+    "title": "Welcome",
+    "introduction": "This is an introduction in English."
+  },
+  "about": {
+    "title": "About",
+    "introduction": "This page is made to give you more informations."
+  }
+}

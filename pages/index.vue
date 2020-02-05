@@ -1,16 +1,14 @@
 <template>
   <div class="container">
-    <div>
-      <div id="Guide">
-        <Guide />
-      </div>
-      <div id="HomeBg">
-        <div id="content">
-          <div id="CircleBg" />
-          <div id="contentText">
-            <h1 class="title">Guan-Ting Liu</h1>
-            <h2 class="subtitle">PORTFOLIO</h2>
-          </div>
+    <div id="Guide">
+      <Guide />
+    </div>
+    <div id="HomeBg">
+      <div id="content">
+        <div id="CircleBg" />
+        <div id="contentText">
+          <h1 class="title">Guan-Ting Liu</h1>
+          <h2 class="subtitle">PORTFOLIO</h2>
         </div>
       </div>
     </div>
