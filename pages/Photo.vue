@@ -9,33 +9,38 @@
           <el-carousel
             id="carousel1"
             indicator-position="outside"
-            height="300px"
             class="col-md-3"
           >
-            <el-carousel-item v-for="(item, index) in ImgArray" :key="item">
+            <el-carousel-item v-for="(item, index) in Imag1Array" :key="item">
               <button id="ImgButton" @click="ImgIndex(item, index)">
-                <el-image :src="item" fit="contain" />
+                <el-image
+                  :src="item"
+                  :preview-src-list="BigImg"
+                  fit="contain"
+                />
               </button>
             </el-carousel-item>
           </el-carousel>
           <el-carousel
             id="carousel2"
             indicator-position="outside"
-            height="300px"
             class="col-md-3"
           >
-            <el-carousel-item v-for="item in ImgArray" :key="item">
-              <img :src="item" />
+            <el-carousel-item v-for="(item, index) in Imag2Array" :key="item">
+              <button id="ImgButton" @click="ImgIndex(item, index)">
+                <el-image :src="item" fit="contain" />
+              </button>
             </el-carousel-item>
           </el-carousel>
           <el-carousel
             id="carousel3"
             indicator-position="outside"
-            height="300px"
             class="col-md-3"
           >
-            <el-carousel-item v-for="item in ImgArray" :key="item">
-              <img :src="item" />
+            <el-carousel-item v-for="(item, index) in Imag3Array" :key="item">
+              <button id="ImgButton" @click="ImgIndex(item, index)">
+                <el-image :src="item" fit="contain" />
+              </button>
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -43,35 +48,41 @@
           <el-carousel
             id="carousel4"
             indicator-position="outside"
-            height="300px"
             class="col-md-3"
           >
-            <el-carousel-item v-for="item in ImgArray" :key="item">
-              <img :src="item" />
+            <el-carousel-item v-for="(item, index) in Imag4Array" :key="item">
+              <button id="ImgButton" @click="ImgIndex(item, index)">
+                <el-image :src="item" fit="contain" />
+              </button>
             </el-carousel-item>
           </el-carousel>
           <el-carousel
             id="carousel5"
             indicator-position="outside"
-            height="300px"
             class="col-md-3"
           >
-            <el-carousel-item v-for="item in ImgArray" :key="item">
-              <img :src="item" />
+            <el-carousel-item v-for="(item, index) in Imag5Array" :key="item">
+              <button id="ImgButton" @click="ImgIndex(item, index)">
+                <el-image :src="item" fit="contain" />
+              </button>
             </el-carousel-item>
           </el-carousel>
           <el-carousel
             id="carousel6"
             indicator-position="outside"
-            height="300px"
             class="col-md-3"
           >
-            <el-carousel-item v-for="item in ImgArray" :key="item">
-              <img :src="item" />
+            <el-carousel-item v-for="(item, index) in Imag6Array" :key="item">
+              <button id="ImgButton" @click="ImgIndex(item, index)">
+                <el-image :src="item" fit="contain" />
+              </button>
             </el-carousel-item>
           </el-carousel>
         </div>
       </div>
+    </div>
+    <div v-if="VisibleImg">
+      <img @click="dialogVisible()" :src="BigImg" class="jump_img" />
     </div>
   </div>
 </template>
@@ -87,13 +98,16 @@ export default {
   props: {},
   data() {
     return {
-      ImgArray: [
-        'https://thumbs2.imgbox.com/07/fd/gRIvyezo_t.jpg',
-        'https://thumbs2.imgbox.com/fc/5c/sG7CtSX9_t.jpg',
-        'https://thumbs2.imgbox.com/3e/33/Yetyca7h_t.jpg',
-        'https://thumbs2.imgbox.com/70/57/dGRoyejm_t.jpg'
-      ],
-      PhotoData: {}
+      PhotoData: {},
+      Imag1Array: [],
+      Imag2Array: [],
+      Imag3Array: [],
+      Imag4Array: [],
+      Imag5Array: [],
+      Imag6Array: [],
+
+      VisibleImg: false,
+      BigImg: ''
     }
   },
 
@@ -104,11 +118,27 @@ export default {
   },
   created() {},
   mounted() {
-    console.log('params', PhotoLink)
+    try {
+      if (PhotoLink != null) {
+        this.Imag1Array = Object.values(PhotoLink.First)
+        this.Imag2Array = Object.values(PhotoLink.Second)
+        this.Imag3Array = Object.values(PhotoLink.Third)
+        this.Imag4Array = Object.values(PhotoLink.Four)
+        this.Imag5Array = Object.values(PhotoLink.Five)
+        this.Imag6Array = Object.values(PhotoLink.Six)
+      }
+    } catch (e) {
+      console.error(e.message)
+    }
   },
   methods: {
     ImgIndex(item, Index) {
+      this.VisibleImg = !this.VisibleImg
+      this.BigImg = item
       console.log('Index', item)
+    },
+    dialogVisible() {
+      this.VisibleImg = false
     }
   }
 }
@@ -179,5 +209,14 @@ export default {
 #ImgButton {
   border: none;
   background-color: black;
+}
+.jump_img {
+  position: absolute;
+  z-index: 99999;
+  width: 50%;
+  height: auto;
+  top: 40%;
+  left: 50%;
+  margin: -20% 0 0 -40%;
 }
 </style>
