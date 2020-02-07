@@ -138,6 +138,7 @@ export default {
       console.log('Index', item)
     },
     dialogVisible() {
+      console.log('1', 1)
       this.VisibleImg = false
     }
   }
