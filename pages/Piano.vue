@@ -733,18 +733,20 @@ export default {
       } else {
         this.KeyUpMove(Event)
       }
-      if (this.playSoundStatus !== undefined) {
-        this.playSoundStatus
-          .then((_) => {
-            // audio.currentTime = 0
-            audio.pause()
-          })
-          .catch((error) => {
-            console.log('error', error)
-          })
-      }
-      // audio.currentTime = 0
-      // audio.pause()
+      // if (this.playSoundStatus !== undefined) {
+      //   this.playSoundStatus
+      //     .then((_) => {
+      //       audio.pause()
+      //     })
+      //     .catch((error) => {
+      //       console.log('error', error)
+      //     })
+      // }
+
+      setTimeout(function() {
+        audio.currentTime = 0
+        audio.pause()
+      }, 10)
     },
     /**
      * @description 按鍵按下時做的事
@@ -760,8 +762,10 @@ export default {
       } else {
         this.KeyDownMove(Event)
       }
-      this.playSoundStatus = audio.play()
-      console.log('this.this.playSoundStatus', this.playSoundStatus)
+      // this.playSoundStatus = audio.play()
+      setTimeout(function() {
+        audio.play()
+      }, 0)
     },
     /**
      * @description 按鍵起來時，css改變的樣子
