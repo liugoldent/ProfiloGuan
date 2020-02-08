@@ -610,7 +610,7 @@ export default {
         'Digit7',
         'ShiftRight'
       ],
-      playSoundStatus: '',
+      playSoundHTML: {},
       ShowObj: {
         ShowShiftLeft: true,
         ShowKeyZ: true,
@@ -744,10 +744,10 @@ export default {
       } else {
         this.KeyUpMove(Event)
       }
-      setTimeout(function() {
-        audio.currentTime = 0
-        audio.pause()
-      }, 10)
+      // setTimeout(function() {
+      //   audio.currentTime = 0
+      //   audio.pause()
+      // }, 10)
     },
     /**
      * @description 按鍵按下時做的事
@@ -764,6 +764,8 @@ export default {
         this.KeyDownMove(Event)
       }
       const AudioPromise = audio.play()
+      this.playSoundHTML = audio.play()
+      console.log('this.playSoundHTML', this.playSoundHTML)
       // setTimeout(function() {
       //   audio.play()
       //   audio.load()
