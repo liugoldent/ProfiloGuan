@@ -744,16 +744,6 @@ export default {
       } else {
         this.KeyUpMove(Event)
       }
-      // if (this.playSoundStatus !== undefined) {
-      //   this.playSoundStatus
-      //     .then((_) => {
-      //       audio.pause()
-      //     })
-      //     .catch((error) => {
-      //       console.log('error', error)
-      //     })
-      // }
-
       setTimeout(function() {
         audio.currentTime = 0
         audio.pause()
@@ -773,11 +763,18 @@ export default {
       } else {
         this.KeyDownMove(Event)
       }
-      // this.playSoundStatus = audio.play()
-      setTimeout(function() {
-        audio.play()
-        audio.load()
-      }, 0)
+      const AudioPromise = audio.play()
+      // setTimeout(function() {
+      //   audio.play()
+      //   audio.load()
+      // }, 0)
+      if (AudioPromise !== undefined) {
+        AudioPromise.then((_) => {
+          audio.pause()
+        }).catch((error) => {
+          console.log('error', error)
+        })
+      }
     },
     /**
      * @description 按鍵起來時，css改變的樣子
