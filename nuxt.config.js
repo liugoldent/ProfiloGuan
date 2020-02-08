@@ -1,3 +1,6 @@
+const faviconPath = process.env.DEPLOY_ENV === 'GH_PAGES' ? '/guan-profile/favicon.ico' : '/favicon.ico'
+
+
 module.exports = {
   mode: 'universal',
   /*
@@ -14,6 +17,7 @@ module.exports = {
         content: process.env.npm_package_description || ''
       }
     ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: faviconPath }],
     script: [
       {
         src: 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js',
