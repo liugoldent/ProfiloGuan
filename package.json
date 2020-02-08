@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",
-    "heroku-postbuild": "npm build"
+    "heroku-postbuild": "yarn build"
   },
   "engines": {
     "node": "10.16.3"
