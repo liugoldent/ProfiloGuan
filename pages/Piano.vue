@@ -757,7 +757,8 @@ export default {
       } else {
         this.KeyDownMove(Event)
       }
-      // audio.load()
+      // audio.play()
+
       const AudioPromise = audio.play()
 
       if (AudioPromise !== undefined) {
@@ -766,6 +767,7 @@ export default {
           console.log('_', _)
         }).catch((error) => {
           console.log('error', error)
+          audio.pause()
         })
       }
     },
