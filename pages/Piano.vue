@@ -610,7 +610,7 @@ export default {
         'Digit7',
         'ShiftRight'
       ],
-      playSoundStatus: false,
+      playSoundStatus: '',
       ShowObj: {
         ShowShiftLeft: true,
         ShowKeyZ: true,
@@ -731,8 +731,18 @@ export default {
       } else {
         this.KeyUpMove(Event)
       }
-      audio.currentTime = 0
-      audio.pause()
+      if (this.playSoundStatus !== undefined) {
+        this.playSoundStatus
+          .then((_) => {
+            audio.currentTime = 0
+            audio.pause()
+          })
+          .catch((error) => {
+            console.log('error', error)
+          })
+      }
+      // audio.currentTime = 0
+      // audio.pause()
     },
     /**
      * @description 按鍵按下時做的事
@@ -748,7 +758,8 @@ export default {
       } else {
         this.KeyDownMove(Event)
       }
-      audio.play()
+      this.playSoundStatus = audio.play()
+      console.log('this.this.playSoundStatus', this.playSoundStatus)
     },
     /**
      * @description 按鍵起來時，css改變的樣子
