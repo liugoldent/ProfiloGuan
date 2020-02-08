@@ -651,6 +651,17 @@ export default {
   watch: {},
   created() {},
   mounted() {
+    HTMLAudioElement.prototype._play = HTMLAudioElement.prototype.play
+    HTMLAudioElement.prototype._load = HTMLAudioElement.prototype.load
+    HTMLAudioElement.prototype.play = function() {
+      // 禁止load操作
+      this._lockLoad = true
+      this._play()
+    }
+    HTMLAudioElement.prototype.load = function() {
+      this._lockLoad || this._load()
+    }
+
     const self = this
     document.onkeydown = function(e) {
       console.log('1', 1)
@@ -765,6 +776,7 @@ export default {
       // this.playSoundStatus = audio.play()
       setTimeout(function() {
         audio.play()
+        audio.load()
       }, 0)
     },
     /**
