@@ -757,12 +757,13 @@ export default {
       } else {
         this.KeyDownMove(Event)
       }
-      audio.load()
+      // audio.load()
       const AudioPromise = audio.play()
 
       if (AudioPromise !== undefined) {
         AudioPromise.then((_) => {
-          audio.pause()
+          // audio.pause()
+          console.log('_', _)
         }).catch((error) => {
           console.log('error', error)
         })
