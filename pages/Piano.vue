@@ -732,10 +732,11 @@ export default {
      */
     UpFunction(Event) {
       const audio = document.getElementById(`${Event}`)
+      // audio.play()
       if (audio == null) {
         return
       }
-      this.MusicUrl = ''
+      // this.MusicUrl = ''
       this.KeyUpMove(Event)
       if (this.ButtonBelowArray.includes(`${Event}`)) {
         this.ButtonCSSUpFunction(Event)
@@ -757,19 +758,19 @@ export default {
       } else {
         this.KeyDownMove(Event)
       }
-      // audio.play()
+      audio.play()
 
-      const AudioPromise = audio.play()
+      // const AudioPromise = audio.play()
 
-      if (AudioPromise !== undefined) {
-        AudioPromise.then((_) => {
-          audio.pause()
-          console.log('_', _)
-        }).catch((error) => {
-          console.log('error', error)
-          audio.pause()
-        })
-      }
+      // if (AudioPromise !== undefined) {
+      //   AudioPromise.then((_) => {
+      //     audio.pause()
+      //     console.log('_', _)
+      //   }).catch((error) => {
+      //     console.log('error', error)
+      //     audio.pause()
+      //   })
+      // }
     },
     /**
      * @description 按鍵起來時，css改變的樣子
