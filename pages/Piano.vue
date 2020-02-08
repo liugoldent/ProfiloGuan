@@ -723,7 +723,7 @@ export default {
      */
     UpFunction(Event) {
       const audio = document.getElementById(`${Event}`)
-      // audio.play()
+      audio.play()
       console.log('audio', audio)
       // audio.pause()
       audio.currentTime = 8
@@ -752,7 +752,7 @@ export default {
       } else {
         this.KeyDownMove(Event)
       }
-      audio.play()
+      audio.load()
 
       const AudioPromise = audio.play()
 
