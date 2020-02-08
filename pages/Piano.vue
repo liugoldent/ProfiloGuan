@@ -733,6 +733,9 @@ export default {
     UpFunction(Event) {
       const audio = document.getElementById(`${Event}`)
       // audio.play()
+      console.log('audio', audio)
+      audio.pause()
+      audio.currentTime = 0
       if (audio == null) {
         return
       }
