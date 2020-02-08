@@ -664,11 +664,9 @@ export default {
 
     const self = this
     document.onkeydown = function(e) {
-      console.log('1', 1)
       self.DownFunction(e.code)
     }
     document.onkeyup = function(e) {
-      console.log('2', 2)
       self.UpFunction(e.code)
     }
     this.ChangeStatus()
@@ -744,10 +742,6 @@ export default {
       } else {
         this.KeyUpMove(Event)
       }
-      // setTimeout(function() {
-      //   audio.currentTime = 0
-      //   audio.pause()
-      // }, 10)
     },
     /**
      * @description 按鍵按下時做的事
@@ -763,16 +757,12 @@ export default {
       } else {
         this.KeyDownMove(Event)
       }
+      audio.load()
       const AudioPromise = audio.play()
-      this.playSoundHTML = audio.play()
-      console.log('this.playSoundHTML', this.playSoundHTML)
-      // setTimeout(function() {
-      //   audio.play()
-      //   audio.load()
-      // }, 0)
+
       if (AudioPromise !== undefined) {
         AudioPromise.then((_) => {
-          audio.pause()
+          audio.play()
         }).catch((error) => {
           console.log('error', error)
         })
