@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import $ from 'jQuery'
+import $ from 'jquery'
 import Vue from 'vue'
 import Notifications from 'vue-notification/dist/ssr.js'
 import axios from 'axios'

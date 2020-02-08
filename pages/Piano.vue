@@ -579,7 +579,7 @@
 </template>
 
 <script>
-import $ from 'jQuery'
+import $ from 'jquery'
 import Guide from '../components/Guide'
 
 export default {
