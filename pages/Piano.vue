@@ -651,22 +651,13 @@ export default {
   watch: {},
   created() {},
   mounted() {
-    HTMLAudioElement.prototype._play = HTMLAudioElement.prototype.play
-    HTMLAudioElement.prototype._load = HTMLAudioElement.prototype.load
-    HTMLAudioElement.prototype.play = function() {
-      // 禁止load操作
-      this._lockLoad = true
-      this._play()
-    }
-    HTMLAudioElement.prototype.load = function() {
-      this._lockLoad || this._load()
-    }
-
     const self = this
     document.onkeydown = function(e) {
+      console.log('1')
       self.DownFunction(e.code)
     }
     document.onkeyup = function(e) {
+      console.log('2')
       self.UpFunction(e.code)
     }
     this.ChangeStatus()
@@ -734,8 +725,8 @@ export default {
       const audio = document.getElementById(`${Event}`)
       // audio.play()
       console.log('audio', audio)
-      audio.pause()
-      audio.currentTime = 0
+      // audio.pause()
+      audio.currentTime = 8
       if (audio == null) {
         return
       }
@@ -763,17 +754,16 @@ export default {
       }
       audio.play()
 
-      // const AudioPromise = audio.play()
+      const AudioPromise = audio.play()
 
-      // if (AudioPromise !== undefined) {
-      //   AudioPromise.then((_) => {
-      //     audio.pause()
-      //     console.log('_', _)
-      //   }).catch((error) => {
-      //     console.log('error', error)
-      //     audio.pause()
-      //   })
-      // }
+      if (AudioPromise !== undefined) {
+        AudioPromise.then((_) => {
+          audio.play()
+        }).catch((error) => {
+          console.log('error', error)
+          audio.pause()
+        })
+      }
     },
     /**
      * @description 按鍵起來時，css改變的樣子
