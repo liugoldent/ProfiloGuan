@@ -1,6 +1,7 @@
-const faviconPath = process.env.DEPLOY_ENV === 'GH_PAGES' ? '/guan-profile/favicon.ico' : '/favicon.ico'
-
-
+const faviconPath =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? '/guan-profile/favicon.ico'
+    : '/favicon.ico'
 module.exports = {
   mode: 'universal',
   /*
@@ -59,7 +60,20 @@ module.exports = {
    */
   build: {
     vendor: ['jquery'],
-
+    extend(config, { isDev, isClient, isServer }) {
+      if (isDev && isClient) {
+        // expose jquery to global
+        config.module.rules.push({
+          test: require.resolve('jquery'),
+          use: [
+            {
+              loader: 'expose-loader',
+              options: '$'
+            }
+          ]
+        })
+      }
+    },
     transpile: [/^element-ui/],
     /*
      ** You can extend webpack config here
