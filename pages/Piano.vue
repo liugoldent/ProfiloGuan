@@ -723,10 +723,10 @@ export default {
      */
     UpFunction(Event) {
       const audio = document.getElementById(`${Event}`)
-      audio.play()
+      // audio.play()
       console.log('audio', audio)
       // audio.pause()
-      audio.currentTime = 8
+      // audio.currentTime = 8
       if (audio == null) {
         return
       }
@@ -752,13 +752,13 @@ export default {
       } else {
         this.KeyDownMove(Event)
       }
-      audio.load()
+      // audio.play()
 
       const AudioPromise = audio.play()
-
+      console.log('AudioPromise', AudioPromise)
       if (AudioPromise !== undefined) {
         AudioPromise.then((_) => {
-          audio.play()
+          // audio.play()
         }).catch((error) => {
           console.log('error', error)
           audio.pause()
