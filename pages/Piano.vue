@@ -653,9 +653,11 @@ export default {
   mounted() {
     const self = this
     document.onkeydown = function(e) {
+      console.log('1', 1)
       self.DownFunction(e.code)
     }
     document.onkeyup = function(e) {
+      console.log('2', 2)
       self.UpFunction(e.code)
     }
     this.ChangeStatus()
@@ -734,7 +736,7 @@ export default {
       if (this.playSoundStatus !== undefined) {
         this.playSoundStatus
           .then((_) => {
-            audio.currentTime = 0
+            // audio.currentTime = 0
             audio.pause()
           })
           .catch((error) => {
