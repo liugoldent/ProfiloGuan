@@ -742,27 +742,33 @@ export default {
      * @description 按鍵按下時做的事
      */
     async DownFunction(Event) {
-      await this.FindUrl(Event)
-      const audio = document.getElementById(`${Event}`)
-      if (audio == null) {
-        return
-      }
-      if (this.ButtonBelowArray.includes(`${Event}`)) {
-        this.ButtonCSSDownFunction(Event)
-      } else {
-        this.KeyDownMove(Event)
-      }
-      // audio.play()
+      try {
+        await this.FindUrl(Event)
+        const audio = document.getElementById(`${Event}`)
+        console.log('audio111', audio)
+        if (audio == null) {
+          return
+        }
+        if (this.ButtonBelowArray.includes(`${Event}`)) {
+          this.ButtonCSSDownFunction(Event)
+        } else {
+          this.KeyDownMove(Event)
+        }
+        // audio.play()
 
-      const AudioPromise = audio.play()
-      console.log('AudioPromise', AudioPromise)
-      if (AudioPromise !== undefined) {
-        AudioPromise.then((_) => {
-          audio.play()
-        }).catch((error) => {
-          console.log('error', error)
-          audio.pause()
-        })
+        const AudioPromise = audio.play()
+        console.log('AudioPromise', AudioPromise)
+        if (AudioPromise !== undefined) {
+          AudioPromise.then((_) => {
+            // audio.play()
+          }).catch((error) => {
+            console.log('error', error)
+            audio.currentTime = 0
+            audio.pause()
+          })
+        }
+      } catch (e) {
+        console.error(e.message)
       }
     },
     /**
