@@ -11,7 +11,7 @@
             <p class="whiteFont">
               A<audio
                 id="KeyA"
-                :src="MusicUrl"
+                src="@/static/PianoSound/Single/Central/LowSol.mp3"
                 class="MusicAudio"
                 type="audio/mpeg"
               ></audio>
@@ -24,7 +24,7 @@
               W
               <audio
                 id="KeyW"
-                :src="MusicUrl"
+                src="@/static/PianoSound/Single/Central/LowSharpFa.mp3"
                 class="MusicAudio"
                 type="audio/mpeg"
               ></audio>
@@ -42,7 +42,7 @@
               S
               <audio
                 id="KeyS"
-                :src="MusicUrl"
+                src="PianoSound/Single/Central/LowSharpFa.mp3"
                 class="MusicAudio"
                 type="audio/mpeg"
               ></audio>
@@ -644,6 +644,11 @@ export default {
         DisableDigit5: false,
         DisableDigit6: false,
         DisableDigit7: false
+      },
+      TestCodeUrl: {
+        KeyA: `@/static/PianoSound/Single/Central/LowFa.mp3`,
+        KeyW: `PianoSound/Single/Central/LowSharpFa.mp3`,
+        KeyS: `PianoSound/Single/Central/LowSol.mp3`
       }
     }
   },
@@ -868,7 +873,8 @@ export default {
         Digit6: `PianoSound/${SoundType}/${this.Range}/FInterval.mp3`,
         Digit7: `PianoSound/${SoundType}/${this.Range}/GInterval.mp3`
       }
-      this.MusicUrl = CodeUrl[Code] || ''
+      console.log('CodeUrl', CodeUrl)
+      // this.MusicUrl = CodeUrl[Code] || ''
     },
     ChangeStatus() {
       if (!this.SwitchValue) {
