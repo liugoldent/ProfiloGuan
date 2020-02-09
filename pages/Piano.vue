@@ -758,7 +758,7 @@ export default {
       console.log('AudioPromise', AudioPromise)
       if (AudioPromise !== undefined) {
         AudioPromise.then((_) => {
-          // audio.play()
+          audio.play()
         }).catch((error) => {
           console.log('error', error)
           audio.pause()
