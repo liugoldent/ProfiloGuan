@@ -3,596 +3,633 @@
     <div id="Guide">
       <Guide />
     </div>
-    <!-- 鍵盤按鍵 -->
-    <div id="PianoBg">
-      <div id="WhitePianoKey">
-        <el-tooltip class="item" effect="light" content="Fa" placement="bottom">
-          <div class="RightBlack">
-            <p class="whiteFont">
-              A<audio
-                id="KeyA"
-                src="@/static/PianoSound/Single/Central/LowSol.mp3"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="#Fa" placement="top">
-          <div class="BlackKeyBoard">
-            <p class="BlackFont">
-              W
-              <audio
-                id="KeyW"
-                src="@/static/PianoSound/Single/Central/LowSharpFa.mp3"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip
-          class="item"
-          effect="light"
-          content="Sol"
-          placement="bottom"
-        >
-          <div class="Middle">
-            <p class="whiteFont">
-              S
-              <audio
-                id="KeyS"
-                src="PianoSound/Single/Central/LowSharpFa.mp3"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="#Sol" placement="top">
-          <div class="BlackKeyBoard">
-            <p class="BlackFont">
-              E<audio
-                id="KeyE"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="La" placement="bottom">
-          <div class="Middle">
-            <p class="whiteFont">
-              D<audio
-                id="KeyD"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="#La" placement="top">
-          <div class="BlackKeyBoard">
-            <p class="BlackFont">
-              R<audio
-                id="KeyR"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="Si" placement="bottom">
-          <div class="LeftBlack">
-            <p class="whiteFont">
-              F<audio
-                id="KeyF"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
+    <div v-if="PianoCentral" class="vif">
+      <!-- 鍵盤按鍵 Central-->
+      <div id="PianoBg">
+        <div id="WhitePianoKey">
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="Fa"
+            placement="bottom"
+          >
+            <div class="RightBlack">
+              <p class="whiteFont">
+                A<audio
+                  id="KeyA"
+                  src="@/static/PianoSound/Single/Central/LowFa.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip class="item" effect="light" content="#Fa" placement="top">
+            <div class="BlackKeyBoard">
+              <p class="BlackFont">
+                W
+                <audio
+                  id="KeyW"
+                  src="@/static/PianoSound/Single/Central/LowSharpFa.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="Sol"
+            placement="bottom"
+          >
+            <div class="Middle">
+              <p class="whiteFont">
+                S
+                <audio
+                  id="KeyS"
+                  src="@/static/PianoSound/Single/Central/LowSol.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="#Sol"
+            placement="top"
+          >
+            <div class="BlackKeyBoard">
+              <p class="BlackFont">
+                E<audio
+                  id="KeyE"
+                  src="@/static/PianoSound/Single/Central/LowSharpSol.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="La"
+            placement="bottom"
+          >
+            <div class="Middle">
+              <p class="whiteFont">
+                D<audio
+                  id="KeyD"
+                  src="@/static/PianoSound/Single/Central/LowLa.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip class="item" effect="light" content="#La" placement="top">
+            <div class="BlackKeyBoard">
+              <p class="BlackFont">
+                R<audio
+                  id="KeyR"
+                  src="@/static/PianoSound/Single/Central/LowSharpLa.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="Si"
+            placement="bottom"
+          >
+            <div class="LeftBlack">
+              <p class="whiteFont">
+                F<audio
+                  id="KeyF"
+                  src="@/static/PianoSound/Single/Central/LowSi.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
 
-        <el-tooltip class="item" effect="light" content="Do" placement="bottom">
-          <div class="RightBlack">
-            <p class="whiteFont">
-              G
-              <audio
-                id="KeyG"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="Do"
+            placement="bottom"
+          >
+            <div class="RightBlack">
+              <p class="whiteFont">
+                G
+                <audio
+                  id="KeyG"
+                  src="@/static/PianoSound/Single/Central/Do.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip class="item" effect="light" content="#Do" placement="top">
+            <div class="BlackKeyBoard">
+              <p class="BlackFont">
+                U<audio
+                  id="KeyU"
+                  src="@/static/PianoSound/Single/Central/SharpDo.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="Re"
+            placement="bottom"
+          >
+            <div class="Middle">
+              <p class="whiteFont">
+                J<audio
+                  id="KeyJ"
+                  src="@/static/PianoSound/Single/Central/Re.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip class="item" effect="light" content="#Re" placement="top">
+            <div class="BlackKeyBoard">
+              <p class="BlackFont">
+                I<audio
+                  id="KeyI"
+                  src="@/static/PianoSound/Single/Central/SharpRe.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="Mi"
+            placement="bottom"
+          >
+            <div class="LeftBlack">
+              <p class="whiteFont">
+                K<audio
+                  id="KeyK"
+                  src="@/static/PianoSound/Single/Central/Mi.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="Fa"
+            placement="bottom"
+          >
+            <div class="RightBlack">
+              <p class="whiteFont">
+                L<audio
+                  id="KeyL"
+                  src="@/static/PianoSound/Single/Central/Fa.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip class="item" effect="light" content="#Fa" placement="top">
+            <div class="BlackKeyBoard">
+              <p class="BlackFont">
+                O<audio
+                  id="KeyO"
+                  src="@/static/PianoSound/Single/Central/SharpFa.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="Sol"
+            placement="bottom"
+          >
+            <div class="Middle">
+              <p class="whiteFont">
+                ;<audio
+                  id="Semicolon"
+                  src="@/static/PianoSound/Single/Central/Sol.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="#Sol"
+            placement="top"
+          >
+            <div class="BlackKeyBoard">
+              <p class="BlackFont">
+                P<audio
+                  id="KeyP"
+                  src="@/static/PianoSound/Single/Central/SharpSol.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+          <el-tooltip
+            class="item"
+            effect="light"
+            content="La"
+            placement="bottom"
+          >
+            <div class="LeftBlack">
+              <p class="whiteFont">
+                '<audio
+                  id="Quote"
+                  src="@/static/PianoSound/Single/Central/La.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+          </el-tooltip>
+        </div>
+      </div>
+      <!-- 音程與度數的切換 -->
+      <div class="SwitchbuttonDiv">
+        <div class="SwitchText">
+          <p id="Interval">和弦</p>
+        </div>
+        <div class="SwitchText">
+          <el-switch
+            v-model="SwitchValue"
+            :width="50"
+            @change="ChangeStatus"
+            active-color="#2980B9"
+            inactive-color="#9B59B6"
+          ></el-switch>
+        </div>
+        <div class="SwitchText">
+          <p id="Degree">音程</p>
+        </div>
+      </div>
+      <!-- 底下的button -->
+      <div id="PianoButton">
+        <transition name="fade">
+          <div id="DegreeButton" v-if="SwitchValue">
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('ShiftLeft')"
+                  v-if="ShowObj.ShowShiftLeft"
+                  :disabled="DisableObj.DisableShiftLeft"
+                  round
+                  >小二度</el-button
+                >
+              </transition>
+              <p class="DegreeP">
+                Left Shift<audio
+                  id="ShiftLeft"
+                  src="@/static/PianoSound/Degree/Central/S2.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('KeyZ')"
+                  v-if="ShowObj.ShowKeyZ"
+                  :disabled="DisableObj.DisableKeyZ"
+                  round
+                  >大二度</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                Z
+                <audio
+                  id="KeyZ"
+                  src="@/static/PianoSound/Degree/Central/B2.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('KeyX')"
+                  v-if="ShowObj.ShowKeyX"
+                  :disabled="DisableObj.DisableKeyX"
+                  round
+                  >小三度</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                X
+                <audio
+                  id="KeyX"
+                  src="@/static/PianoSound/Degree/Central/S3.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('KeyC')"
+                  v-if="ShowObj.ShowKeyC"
+                  :disabled="DisableObj.DisableKeyC"
+                  round
+                  >大三度</el-button
+                >
+              </transition>
+              <p class="DegreeP">
+                C<audio
+                  id="KeyC"
+                  src="@/static/PianoSound/Degree/Central/B3.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('KeyV')"
+                  v-if="ShowObj.ShowKeyV"
+                  :disabled="DisableObj.DisableKeyV"
+                  round
+                  >完全四度</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                V
+                <audio
+                  id="KeyV"
+                  src="@/static/PianoSound/Degree/Central/F4.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('KeyB')"
+                  v-if="ShowObj.ShowKeyB"
+                  :disabled="DisableObj.DisableKeyB"
+                  round
+                  >增四度</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                B
+                <audio
+                  id="KeyB"
+                  src="@/static/PianoSound/Degree/Central/Add4.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('KeyN')"
+                  v-if="ShowObj.ShowKeyN"
+                  :disabled="DisableObj.DisableKeyN"
+                  round
+                  >完全五度</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                N<audio
+                  id="KeyN"
+                  src="@/static/PianoSound/Degree/Central/F5.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('KeyM')"
+                  v-if="ShowObj.ShowKeyM"
+                  :disabled="DisableObj.DisableKeyM"
+                  round
+                  >小六度</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                M<audio
+                  id="KeyM"
+                  src="@/static/PianoSound/Degree/Central/S6.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('Comma')"
+                  v-if="ShowObj.ShowComma"
+                  :disabled="DisableObj.DisableComma"
+                  round
+                  >大六度</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                &lt;
+                <audio
+                  id="Comma"
+                  src="@/static/PianoSound/Degree/Central/B6.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('Period')"
+                  v-if="ShowObj.ShowPeriod"
+                  :disabled="DisableObj.DisablePeriod"
+                  round
+                  >小七度</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                &gt;
+                <audio
+                  id="Period"
+                  src="@/static/PianoSound/Degree/Central/S7.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('Slash')"
+                  v-if="ShowObj.ShowSlash"
+                  :disabled="DisableObj.DisableSlash"
+                  round
+                  >大七度</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                /
+                <audio
+                  id="Slash"
+                  src="@/static/PianoSound/Degree/Central/B7.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('ShiftRight')"
+                  v-if="ShowObj.ShowShiftRight"
+                  :disabled="DisableObj.DisableShiftRight"
+                  round
+                  >完全八度</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                Right Shift
+                <audio
+                  id="ShiftRight"
+                  src="@/static/PianoSound/Degree/Central/F8.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
           </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="#Do" placement="top">
-          <div class="BlackKeyBoard">
-            <p class="BlackFont">
-              U<audio
-                id="KeyU"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
+        </transition>
+
+        <transition name="fade">
+          <div id="IntervalButton" v-if="!SwitchValue">
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('Digit5')"
+                  v-if="ShowObj.ShowDigit5"
+                  :disabled="DisableObj.DisableDigit5"
+                  round
+                  >C和弦</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                5
+                <audio
+                  id="Digit5"
+                  src="@/static/PianoSound/Interval/Central/CInterval.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('Digit6')"
+                  v-if="ShowObj.ShowDigit6"
+                  :disabled="DisableObj.DisableDigit6"
+                  round
+                  >F和弦</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                6
+                <audio
+                  id="Digit6"
+                  src="@/static/PianoSound/Interval/Central/FInterval.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
+            <div class="ButtonComp">
+              <transition mode="out-in">
+                <el-button
+                  @click="playSound('Digit7')"
+                  v-if="ShowObj.ShowDigit7"
+                  :disabled="DisableObj.DisableDigit7"
+                  round
+                  >G和弦</el-button
+                ></transition
+              >
+              <p class="DegreeP">
+                7
+                <audio
+                  id="Digit7"
+                  src="@/static/PianoSound/Interval/Central/GInterval.mp3"
+                  class="MusicAudio"
+                  type="audio/mpeg"
+                ></audio>
+              </p>
+            </div>
           </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="Re" placement="bottom">
-          <div class="Middle">
-            <p class="whiteFont">
-              J<audio
-                id="KeyJ"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="#Re" placement="top">
-          <div class="BlackKeyBoard">
-            <p class="BlackFont">
-              I<audio
-                id="KeyI"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="Mi" placement="bottom">
-          <div class="LeftBlack">
-            <p class="whiteFont">
-              K<audio
-                id="KeyK"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="Fa" placement="bottom">
-          <div class="RightBlack">
-            <p class="whiteFont">
-              L<audio
-                id="KeyL"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="#Fa" placement="top">
-          <div class="BlackKeyBoard">
-            <p class="BlackFont">
-              O<audio
-                id="KeyO"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip
-          class="item"
-          effect="light"
-          content="Sol"
-          placement="bottom"
-        >
-          <div class="Middle">
-            <p class="whiteFont">
-              ;<audio
-                id="Semicolon"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="#Sol" placement="top">
-          <div class="BlackKeyBoard">
-            <p class="BlackFont">
-              P<audio
-                id="KeyP"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
-        <el-tooltip class="item" effect="light" content="La" placement="bottom">
-          <div class="LeftBlack">
-            <p class="whiteFont">
-              '<audio
-                id="Quote"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </el-tooltip>
+        </transition>
       </div>
     </div>
     <!-- 高低音button -->
-    <div class="buttonposition">
-      <el-tooltip class="item" effect="dark" content="高八度" placement="top">
-        <button @click="ChangeHighLow('Higher')" class="iconbuttonup">
-          <i class="custom-icon el-icon-arrow-up"></i>
-        </button>
-      </el-tooltip>
-      <el-tooltip class="item" effect="dark" content="中音域" placement="left">
-        <button @click="ChangeHighLow('Central')" class="iconbuttonCentral">
-          <i class="custom-icon el-icon-minus"></i>
-        </button>
-      </el-tooltip>
-      <el-tooltip
-        class="item"
-        effect="dark"
-        content="低八度"
-        placement="bottom"
-      >
-        <button @click="ChangeHighLow('Lower')" class="iconbuttondown">
-          <i class="custom-icon el-icon-arrow-down"></i>
-        </button>
-      </el-tooltip>
-    </div>
-    <!-- 音程與度數的切換 -->
-    <div class="SwitchbuttonDiv">
-      <div class="SwitchText">
-        <p id="Interval">和弦</p>
-      </div>
-      <div class="SwitchText">
-        <el-switch
-          v-model="SwitchValue"
-          :width="50"
-          @change="ChangeStatus"
-          active-color="#2980B9"
-          inactive-color="#9B59B6"
-        ></el-switch>
-      </div>
-      <div class="SwitchText">
-        <p id="Degree">音程</p>
-      </div>
-    </div>
-    <!-- 底下的button -->
-    <div id="PianoButton">
-      <transition name="fade">
-        <div id="DegreeButton" v-if="SwitchValue">
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('ShiftLeft')"
-                v-if="ShowObj.ShowShiftLeft"
-                :disabled="DisableObj.DisableShiftLeft"
-                round
-                >小二度</el-button
-              >
-            </transition>
-            <p class="DegreeP">
-              Left Shift<audio
-                id="ShiftLeft"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('KeyZ')"
-                v-if="ShowObj.ShowKeyZ"
-                :disabled="DisableObj.DisableKeyZ"
-                round
-                >大二度</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              Z
-              <audio
-                id="KeyZ"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('KeyX')"
-                v-if="ShowObj.ShowKeyX"
-                :disabled="DisableObj.DisableKeyX"
-                round
-                >小三度</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              X
-              <audio
-                id="KeyX"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('KeyC')"
-                v-if="ShowObj.ShowKeyC"
-                :disabled="DisableObj.DisableKeyC"
-                round
-                >大三度</el-button
-              >
-            </transition>
-            <p class="DegreeP">
-              C<audio
-                id="KeyC"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('KeyV')"
-                v-if="ShowObj.ShowKeyV"
-                :disabled="DisableObj.DisableKeyV"
-                round
-                >完全四度</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              V
-              <audio
-                id="KeyV"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('KeyB')"
-                v-if="ShowObj.ShowKeyB"
-                :disabled="DisableObj.DisableKeyB"
-                round
-                >增四度</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              B
-              <audio
-                id="KeyB"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('KeyN')"
-                v-if="ShowObj.ShowKeyN"
-                :disabled="DisableObj.DisableKeyN"
-                round
-                >完全五度</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              N<audio
-                id="KeyN"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('KeyM')"
-                v-if="ShowObj.ShowKeyM"
-                :disabled="DisableObj.DisableKeyM"
-                round
-                >小六度</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              M<audio
-                id="KeyM"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('Comma')"
-                v-if="ShowObj.ShowComma"
-                :disabled="DisableObj.DisableComma"
-                round
-                >大六度</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              &lt;
-              <audio
-                id="Comma"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('Period')"
-                v-if="ShowObj.ShowPeriod"
-                :disabled="DisableObj.DisablePeriod"
-                round
-                >小七度</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              &gt;
-              <audio
-                id="Period"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('Slash')"
-                v-if="ShowObj.ShowSlash"
-                :disabled="DisableObj.DisableSlash"
-                round
-                >大七度</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              /
-              <audio
-                id="Slash"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('ShiftRight')"
-                v-if="ShowObj.ShowShiftRight"
-                :disabled="DisableObj.DisableShiftRight"
-                round
-                >完全八度</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              Right Shift
-              <audio
-                id="ShiftRight"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </div>
-      </transition>
-
-      <transition name="fade">
-        <div id="IntervalButton" v-if="!SwitchValue">
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('Digit5')"
-                v-if="ShowObj.ShowDigit5"
-                :disabled="DisableObj.DisableDigit5"
-                round
-                >C和弦</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              5
-              <audio
-                id="Digit5"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('Digit6')"
-                v-if="ShowObj.ShowDigit6"
-                :disabled="DisableObj.DisableDigit6"
-                round
-                >F和弦</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              6
-              <audio
-                id="Digit6"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-          <div class="ButtonComp">
-            <transition mode="out-in">
-              <el-button
-                @click="playSound('Digit7')"
-                v-if="ShowObj.ShowDigit7"
-                :disabled="DisableObj.DisableDigit7"
-                round
-                >G和弦</el-button
-              ></transition
-            >
-            <p class="DegreeP">
-              7
-              <audio
-                id="Digit7"
-                :src="MusicUrl"
-                class="MusicAudio"
-                type="audio/mpeg"
-              ></audio>
-            </p>
-          </div>
-        </div>
-      </transition>
+    <div>
+      <HiLowControl :range="ComponentPiano" />
     </div>
   </div>
 </template>
 
 <script>
 import $ from 'jquery'
-import Guide from '../components/Guide'
+import Guide from '@/components/Guide'
+import HiLowControl from '@/components/PianoHighLowControl.vue'
 
 export default {
   name: 'Piano',
   components: {
-    Guide
+    Guide,
+    HiLowControl
   },
   props: {},
   data() {
     return {
+      ComponentPiano: 'Central',
+      PianoCentral: true,
+      PianoHigher: false,
+      PianoLower: false,
       SwitchValue: true,
-      MusicUrl: '',
-      Range: 'Central',
       ButtonBelowArray: [
         'ShiftLeft',
         'KeyZ',
@@ -610,7 +647,6 @@ export default {
         'Digit7',
         'ShiftRight'
       ],
-      playSoundHTML: {},
       ShowObj: {
         ShowShiftLeft: true,
         ShowKeyZ: true,
@@ -644,11 +680,6 @@ export default {
         DisableDigit5: false,
         DisableDigit6: false,
         DisableDigit7: false
-      },
-      TestCodeUrl: {
-        KeyA: `@/static/PianoSound/Single/Central/LowFa.mp3`,
-        KeyW: `PianoSound/Single/Central/LowSharpFa.mp3`,
-        KeyS: `PianoSound/Single/Central/LowSol.mp3`
       }
     }
   },
@@ -658,15 +689,12 @@ export default {
   mounted() {
     const self = this
     document.onkeydown = function(e) {
-      console.log('1')
       self.DownFunction(e.code)
     }
     document.onkeyup = function(e) {
-      console.log('2')
       self.UpFunction(e.code)
     }
     this.ChangeStatus()
-    this.RangeBgColor(this.Range)
   },
   methods: {
     /**
@@ -717,25 +745,16 @@ export default {
       }, 10000)
     },
     /**
-     * @description 更改高低音
-     */
-    ChangeHighLow(Range) {
-      this.Range = Range
-      this.RangeBgColor(Range)
-    },
-    /**
      * @description 按鍵彈起時做的事
      */
     UpFunction(Event) {
       const audio = document.getElementById(`${Event}`)
-      // audio.play()
-      console.log('audio', audio)
-      // audio.pause()
-      // audio.currentTime = 8
+
+      audio.pause()
+      audio.currentTime = 0
       if (audio == null) {
         return
       }
-      // this.MusicUrl = ''
       this.KeyUpMove(Event)
       if (this.ButtonBelowArray.includes(`${Event}`)) {
         this.ButtonCSSUpFunction(Event)
@@ -746,11 +765,10 @@ export default {
     /**
      * @description 按鍵按下時做的事
      */
-    async DownFunction(Event) {
+    DownFunction(Event) {
       try {
-        await this.FindUrl(Event)
+        // await this.FindUrl(Event)
         const audio = document.getElementById(`${Event}`)
-        console.log('audio111', audio)
         if (audio == null) {
           return
         }
@@ -759,14 +777,10 @@ export default {
         } else {
           this.KeyDownMove(Event)
         }
-        // audio.play()
 
         const AudioPromise = audio.play()
-        console.log('AudioPromise', AudioPromise)
         if (AudioPromise !== undefined) {
-          AudioPromise.then((_) => {
-            // audio.play()
-          }).catch((error) => {
+          AudioPromise.then((_) => {}).catch((error) => {
             console.log('error', error)
             audio.currentTime = 0
             audio.pause()
@@ -834,48 +848,6 @@ export default {
       EventKeyButton.css('opacity', '1')
       EventKeyButton.css('color', 'black')
     },
-    /**
-     * @description 決定發出哪個聲音的控制
-     */
-    FindUrl(Code) {
-      const SoundType = this.SwitchValue ? 'Degree' : 'Interval'
-      const CodeUrl = {
-        KeyA: `PianoSound/Single/${this.Range}/LowFa.mp3`,
-        KeyW: `PianoSound/Single/${this.Range}/LowSharpFa.mp3`,
-        KeyS: `PianoSound/Single/${this.Range}/LowSol.mp3`,
-        KeyE: `PianoSound/Single/${this.Range}/LowSharpSol.mp3`,
-        KeyD: `PianoSound/Single/${this.Range}/LowLa.mp3`,
-        KeyR: `PianoSound/Single/${this.Range}/LowSharpLa.mp3`,
-        KeyF: `PianoSound/Single/${this.Range}/LowSi.mp3`,
-        KeyG: `PianoSound/Single/${this.Range}/Do.mp3`,
-        KeyU: `PianoSound/Single/${this.Range}/SharpDo.mp3`,
-        KeyJ: `PianoSound/Single/${this.Range}/Re.mp3`,
-        KeyI: `PianoSound/Single/${this.Range}/SharpRe.mp3`,
-        KeyK: `PianoSound/Single/${this.Range}/Mi.mp3`,
-        KeyL: `PianoSound/Single/${this.Range}/Fa.mp3`,
-        KeyO: `PianoSound/Single/${this.Range}/SharpFa.mp3`,
-        Semicolon: `PianoSound/Single/${this.Range}/Sol.mp3`,
-        KeyP: `PianoSound/Single/${this.Range}/SharpSol.mp3`,
-        Quote: `PianoSound/Single/${this.Range}/La.mp3`,
-        ShiftLeft: `PianoSound/${SoundType}/${this.Range}/S2.mp3`,
-        KeyZ: `PianoSound/${SoundType}/${this.Range}/B2.mp3`,
-        KeyX: `PianoSound/${SoundType}/${this.Range}/S3.mp3`,
-        KeyC: `PianoSound/${SoundType}/${this.Range}/B3.mp3`,
-        KeyV: `PianoSound/${SoundType}/${this.Range}/F4.mp3`,
-        KeyB: `PianoSound/${SoundType}/${this.Range}/Add4.mp3`,
-        KeyN: `PianoSound/${SoundType}/${this.Range}/F5.mp3`,
-        KeyM: `PianoSound/${SoundType}/${this.Range}/S6.mp3`,
-        Comma: `PianoSound/${SoundType}/${this.Range}/B6.mp3`,
-        Period: `PianoSound/${SoundType}/${this.Range}/S7.mp3`,
-        Slash: `PianoSound/${SoundType}/${this.Range}/B7.mp3`,
-        ShiftRight: `PianoSound/${SoundType}/${this.Range}/F8.mp3`,
-        Digit5: `PianoSound/${SoundType}/${this.Range}/CInterval.mp3`,
-        Digit6: `PianoSound/${SoundType}/${this.Range}/FInterval.mp3`,
-        Digit7: `PianoSound/${SoundType}/${this.Range}/GInterval.mp3`
-      }
-      console.log('CodeUrl', CodeUrl)
-      // this.MusicUrl = CodeUrl[Code] || ''
-    },
     ChangeStatus() {
       if (!this.SwitchValue) {
         $('#Interval').css('color', '#9B59B6')
@@ -883,24 +855,6 @@ export default {
       } else {
         $('#Degree').css('color', '#2980B9')
         $('#Interval').css('color', 'black')
-      }
-    },
-    /**
-     * @description 調整點擊的高低音背景顏色
-     */
-    RangeBgColor(Range) {
-      if (Range === 'Central') {
-        $('.iconbuttonCentral').css('background-color', 'rgb(39, 6, 158)')
-        $('.iconbuttondown').css('background-color', 'black')
-        $('.iconbuttonup').css('background-color', 'black')
-      } else if (Range === 'Lower') {
-        $('.iconbuttondown').css('background-color', 'rgb(39, 6, 158)')
-        $('.iconbuttonCentral').css('background-color', 'black')
-        $('.iconbuttonup').css('background-color', 'black')
-      } else if (Range === 'Higher') {
-        $('.iconbuttonup').css('background-color', 'rgb(39, 6, 158)')
-        $('.iconbuttonCentral').css('background-color', 'black')
-        $('.iconbuttondown').css('background-color', 'black')
       }
     },
     /**
@@ -940,6 +894,10 @@ $KeyBoardMarginTop: 18vh;
 $KeyBoardMarginLeft: 13.5vw;
 .All {
   height: 100vh;
+}
+.vif {
+  height: 100vh;
+  width: 100vw;
 }
 /*所有的Piano 琴鍵 */
 #PianoBg {
@@ -1023,46 +981,6 @@ $KeyBoardMarginLeft: 13.5vw;
   opacity: 0.5;
   cursor: pointer;
   transform: translateY(-2vh);
-}
-/**icon 的 div style */
-.buttonposition {
-  position: absolute;
-  top: 30vh;
-  right: 5vw;
-}
-.iconbuttonup {
-  width: 3vw;
-  height: 5vh;
-  background-color: black;
-  position: absolute;
-  right: 0px;
-  margin-right: 2vw;
-  transition-duration: 1s;
-}
-.iconbuttonup:hover {
-  cursor: pointer;
-  transform: translateY(-2vh);
-}
-.custom-icon {
-  font-size: 3vh;
-  color: white;
-}
-.iconbuttondown {
-  @extend .iconbuttonup;
-  top: 12vh;
-}
-.iconbuttondown:hover {
-  cursor: pointer;
-  transform: translateY(2vh);
-}
-
-.iconbuttonCentral {
-  @extend .iconbuttonup;
-  top: 6vh;
-}
-.iconbuttonCentral:hover {
-  cursor: pointer;
-  transform: translateX(2vh);
 }
 /**黑鍵 白鍵 上的文字 */
 .whiteFont {

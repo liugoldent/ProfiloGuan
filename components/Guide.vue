@@ -14,7 +14,7 @@
         </template>
         <el-menu-item-group>
           <el-menu-item index="1-1">
-            <nuxt-link to="Piano">鋼琴</nuxt-link>
+            <nuxt-link to="/Piano">鋼琴</nuxt-link>
           </el-menu-item>
           <el-menu-item index="1-2"
             ><nuxt-link to="Metronome">節拍器</nuxt-link></el-menu-item
@@ -22,7 +22,7 @@
         </el-menu-item-group>
       </el-submenu>
       <el-menu-item index="2">
-        <nuxt-link to="Photo">
+        <nuxt-link to="/Photo">
           <i class="el-icon-camera"></i>
           <span slot="title">Photo</span>
         </nuxt-link>
@@ -32,7 +32,7 @@
         <span slot="title">About Me</span>
       </el-menu-item>
       <el-menu-item index="4">
-        <nuxt-link to="Movie">
+        <nuxt-link to="/Movie">
           <i class="el-icon-video-camera"></i>
           <span slot="title">Movie</span>
         </nuxt-link>
