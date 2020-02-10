@@ -28,8 +28,10 @@
         </nuxt-link>
       </el-menu-item>
       <el-menu-item index="3">
-        <i class="el-icon-s-custom"></i>
-        <span slot="title">About Me</span>
+        <nuxt-link to="/Self">
+          <i class="el-icon-s-custom"></i>
+          <span slot="title">About Me</span>
+        </nuxt-link>
       </el-menu-item>
       <el-menu-item index="4">
         <nuxt-link to="/Movie">

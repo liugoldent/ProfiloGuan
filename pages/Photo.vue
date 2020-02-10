@@ -5,80 +5,57 @@
     </div>
     <div id="HomeBg">
       <div id="content">
-        <div id="UpperPhoto">
-          <el-carousel
-            id="carousel1"
-            indicator-position="outside"
-            class="col-md-3"
+        <el-carousel
+          id="carousel1"
+          indicator-position="outside"
+          class="col-md-3"
+        >
+          <el-carousel-item
+            v-for="(item, index) in ShowImgArray1"
+            :key="item"
+            height="10vh"
           >
-            <el-carousel-item v-for="(item, index) in Imag1Array" :key="item">
-              <button id="ImgButton" @click="ImgIndex(item, index)">
-                <el-image
-                  :src="item"
-                  :preview-src-list="BigImg"
-                  fit="contain"
-                />
-              </button>
-            </el-carousel-item>
-          </el-carousel>
-          <el-carousel
-            id="carousel2"
-            indicator-position="outside"
-            class="col-md-3"
+            <button id="ImgButton" @click="ImgIndex(item, index)">
+              <el-image :src="item" :preview-src-list="BigImg" fit="contain" />
+            </button>
+          </el-carousel-item>
+        </el-carousel>
+        <el-carousel
+          id="carousel2"
+          indicator-position="outside"
+          class="col-md-3"
+        >
+          <el-carousel-item
+            v-for="(item, index) in ShowImgArray2"
+            :key="item"
+            height="10vh"
           >
-            <el-carousel-item v-for="(item, index) in Imag2Array" :key="item">
-              <button id="ImgButton" @click="ImgIndex(item, index)">
-                <el-image :src="item" fit="contain" />
-              </button>
-            </el-carousel-item>
-          </el-carousel>
-          <el-carousel
-            id="carousel3"
-            indicator-position="outside"
-            class="col-md-3"
-          >
-            <el-carousel-item v-for="(item, index) in Imag3Array" :key="item">
-              <button id="ImgButton" @click="ImgIndex(item, index)">
-                <el-image :src="item" fit="contain" />
-              </button>
-            </el-carousel-item>
-          </el-carousel>
-        </div>
-        <div id="LowerPhoto">
-          <el-carousel
-            id="carousel4"
-            indicator-position="outside"
-            class="col-md-3"
-          >
-            <el-carousel-item v-for="(item, index) in Imag4Array" :key="item">
-              <button id="ImgButton" @click="ImgIndex(item, index)">
-                <el-image :src="item" fit="contain" />
-              </button>
-            </el-carousel-item>
-          </el-carousel>
-          <el-carousel
-            id="carousel5"
-            indicator-position="outside"
-            class="col-md-3"
-          >
-            <el-carousel-item v-for="(item, index) in Imag5Array" :key="item">
-              <button id="ImgButton" @click="ImgIndex(item, index)">
-                <el-image :src="item" fit="contain" />
-              </button>
-            </el-carousel-item>
-          </el-carousel>
-          <el-carousel
-            id="carousel6"
-            indicator-position="outside"
-            class="col-md-3"
-          >
-            <el-carousel-item v-for="(item, index) in Imag6Array" :key="item">
-              <button id="ImgButton" @click="ImgIndex(item, index)">
-                <el-image :src="item" fit="contain" />
-              </button>
-            </el-carousel-item>
-          </el-carousel>
-        </div>
+            <button id="ImgButton" @click="ImgIndex(item, index)">
+              <el-image :src="item" fit="contain" />
+            </button>
+          </el-carousel-item>
+        </el-carousel>
+        <el-carousel
+          id="carousel3"
+          indicator-position="outside"
+          class="col-md-3"
+        >
+          <el-carousel-item v-for="(item, index) in ShowImgArray3" :key="item">
+            <button id="ImgButton" @click="ImgIndex(item, index)">
+              <el-image :src="item" fit="contain" />
+            </button>
+          </el-carousel-item>
+        </el-carousel>
+      </div>
+      <div class="block">
+        <el-pagination
+          id="Pagination"
+          :total="total"
+          @current-change="PageChange($event)"
+          background
+          layout="prev, pager, next"
+        >
+        </el-pagination>
       </div>
     </div>
     <div v-if="VisibleImg">
@@ -105,9 +82,13 @@ export default {
       Imag4Array: [],
       Imag5Array: [],
       Imag6Array: [],
+      ShowImgArray1: [],
+      ShowImgArray2: [],
+      ShowImgArray3: [],
 
       VisibleImg: false,
-      BigImg: ''
+      BigImg: '',
+      total: 20
     }
   },
 
@@ -126,6 +107,9 @@ export default {
         this.Imag4Array = Object.values(PhotoLink.Four)
         this.Imag5Array = Object.values(PhotoLink.Five)
         this.Imag6Array = Object.values(PhotoLink.Six)
+        this.ShowImgArray1 = this.Imag1Array
+        this.ShowImgArray2 = this.Imag2Array
+        this.ShowImgArray3 = this.Imag3Array
       }
     } catch (e) {
       console.error(e.message)
@@ -135,11 +119,20 @@ export default {
     ImgIndex(item, Index) {
       this.VisibleImg = !this.VisibleImg
       this.BigImg = item
-      console.log('Index', item)
     },
     dialogVisible() {
-      console.log('1', 1)
       this.VisibleImg = false
+    },
+    PageChange(Page) {
+      if (Page === 1) {
+        this.ShowImgArray1 = this.Imag1Array
+        this.ShowImgArray2 = this.Imag2Array
+        this.ShowImgArray3 = this.Imag3Array
+      } else if (Page === 2) {
+        this.ShowImgArray1 = this.Imag4Array
+        this.ShowImgArray2 = this.Imag5Array
+        this.ShowImgArray3 = this.Imag6Array
+      }
     }
   }
 }
@@ -155,7 +148,10 @@ export default {
   align-items: center;
   text-align: center;
 }
-
+.el-image {
+  border: 2px;
+  border-radius: 10px;
+}
 #HomeBg {
   background-color: black;
   height: 100vh;
@@ -170,54 +166,63 @@ export default {
   width: 90vw;
 }
 #UpperPhoto {
+  top: 25vh;
   width: 90vw;
-  height: 50vh;
+  height: 30vh;
 }
-#LowerPhoto {
-  @extend #UpperPhoto;
-}
+
 /** 卡片外觀與排列 */
 #carousel1 {
   width: 25vw;
-  top: 5vh;
+  top: 40vh;
   left: 3.75vw;
 }
 #carousel2 {
   position: absolute;
   width: 25vw;
-  top: 5vh;
+  top: 15vh;
   left: 32.5vw;
 }
 #carousel3 {
   width: 25vw;
   position: absolute;
-  top: 5vh;
+  top: 40vh;
   right: 3.75vw;
-}
-
-#carousel4 {
-  @extend #carousel1;
-}
-#carousel5 {
-  @extend #carousel2;
-  top: 55vh;
-}
-#carousel6 {
-  @extend #carousel3;
-  top: 55vh;
 }
 
 #ImgButton {
   border: none;
   background-color: black;
 }
+
+/** 跳出的圖面置中 */
 .jump_img {
   position: absolute;
   z-index: 99999;
-  width: 50%;
+  width: 45%;
   height: auto;
   top: 40%;
   left: 50%;
-  margin: -20% 0 0 -40%;
+  margin: -18% -22.5%;
+  border-style: outset;
+  border-width: 9px;
+
+  opacity: 1;
+  animation: fade 1s linear;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/** 分頁樣式 */
+#Pagination {
+  position: absolute;
+  bottom: 12vh;
+  margin-right: 45vw;
+  margin-left: 45vw;
 }
 </style>
