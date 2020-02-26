@@ -75,14 +75,6 @@ $CircleBgSize: 500px;
   animation: Imgmove 120s linear infinite;
   background-repeat: repeat-y;
 }
-@keyframes Imgmove {
-  from {
-    background-position: 0% 0%;
-  }
-  to {
-    background-position: 0% 200%;
-  }
-}
 
 #content {
   margin: 0px auto;

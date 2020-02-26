@@ -29,7 +29,7 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: '',
   /*
    ** Global CSS
    */
@@ -37,7 +37,11 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/element-ui', '@/plugins/echarts'],
+  plugins: [
+    '@/plugins/element-ui',
+    '@/plugins/echarts',
+    '~/plugins/font-awesome'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -48,32 +52,51 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['nuxt-fontawesome'],
   axios: {
     progress: true,
     https: true,
     proxyHeaders: false,
     baseURL: 'http://api.themoviedb.org/3/'
   },
+  fontawesome: {
+    // icon 的標籤使用 <fa>，這邊不設定就會依照 plugin 裡的設定<font-awesome-icon>
+    component: 'fa',
+    imports: [
+      // 引入 fas 所有的icon
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      },
+      {
+        set: '@fortawesome/free-regular-svg-icons',
+        icons: ['far']
+      },
+      {
+        set: '@fortawesome/free-brands-svg-icons',
+        icons: ['fab']
+      }
+    ]
+  },
   /*
    ** Build configuration
    */
   build: {
     vendor: ['jquery'],
-    extend(config, { isDev, isClient, isServer }) {
-      if (isDev && isClient) {
-        // expose jquery to global
-        config.module.rules.push({
-          test: require.resolve('jquery'),
-          use: [
-            {
-              loader: 'expose-loader',
-              options: '$'
-            }
-          ]
-        })
-      }
-    },
+    // extend(config, { isDev, isClient, isServer }) {
+    //   if (isDev && isClient) {
+    //     // expose jquery to global
+    //     config.module.rules.push({
+    //       test: require.resolve('jquery'),
+    //       use: [
+    //         {
+    //           loader: 'expose-loader',
+    //           options: '$'
+    //         }
+    //       ]
+    //     })
+    //   }
+    // },
     transpile: [/^element-ui/],
     /*
      ** You can extend webpack config here
@@ -86,6 +109,7 @@ module.exports = {
       }
     },
 
+    // eslint-disable-next-line no-dupe-keys
     extend(config, ctx) {
       // Run ESLint on save
       const vueLoader = config.module.rules.find(

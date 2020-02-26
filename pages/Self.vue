@@ -1,122 +1,76 @@
 <template>
   <!-- Histogram -->
-  <div id="">
+  <div id>
     <div id="Guide">
       <Guide />
     </div>
     <div class="content">
-      <div id="AboutSkill" v-if="ExpSkill"></div>
-      <div id="AboutExp" v-if="!ExpSkill"></div>
+      <Skill v-if="ExpSkill" />
+      <Exp ref="expcomponent" v-if="!ExpSkill" />
     </div>
-    <button class="ExpSkillIcon">
-      <i class="custom-icon el-icon-arrow-right"></i>
+    <button @click="CheckoutSkillExp" class="ExpSkillIcon">
+      <i v-if="ExpSkill" class="custom-icon el-icon-arrow-right"></i>
+      <i v-if="!ExpSkill" class="custom-icon el-icon-arrow-left"></i>
     </button>
+    <div id="secretDialog" v-if="!ExpSkill">
+      <el-input
+        id="secretInput"
+        v-model="SECRET"
+        placeholder="請輸入四位數密碼"
+        show-password
+      ></el-input>
+      <el-button
+        id="secreticon"
+        @click="GoShowExp"
+        icon="el-icon-position"
+        circle
+      ></el-button>
+    </div>
   </div>
 </template>
 
 <script>
+import $ from 'jquery'
 import Guide from '../components/Guide'
-
+import Skill from './Self/Skill'
+import Exp from './Self/Exp'
 export default {
   name: 'FourMetronome',
   components: {
-    Guide
+    Guide,
+    Skill,
+    Exp
   },
   props: {},
   data() {
     return {
-      SelfData: [
-        { value: 400, name: 'Vue' },
-        { value: 360, name: 'HTML、CSS、Sass、Git' },
-        { value: 320, name: 'API' },
-        { value: 280, name: 'Bootstrap、jQuery' },
-        { value: 240, name: 'Nuxt、Node.js' },
-        { value: 200, name: 'Jest' }
-      ],
-      ExpSkill: true
+      ExpSkill: true,
+      ExpFilter: false,
+      SECRET: ''
     }
   },
   computed: {},
   watch: {},
   created() {},
-  mounted() {
-    this.echartsInit()
-  },
+  mounted() {},
   methods: {
     /**
-     * @description 圖表初始化
+     * @description 切換經歷或技能
      */
-    echartsInit() {
-      // 找到容器
-      const myChart = this.$echarts.init(document.getElementById('AboutSkill'))
-      // 开始渲染
-      myChart.setOption({
-        backgroundColor: '#000000',
-
-        title: {
-          left: 'center',
-          top: 30,
-          textStyle: {
-            color: '#ccc'
-          }
-        },
-
-        tooltip: {
-          trigger: 'item',
-          formatter: '{b}'
-        },
-
-        visualMap: {
-          show: false,
-          min: 80,
-          max: 600,
-          inRange: {
-            colorLightness: [0, 1]
-          }
-        },
-        series: [
-          {
-            name: 'Skill',
-            type: 'pie',
-            radius: '60%',
-            center: ['50%', '50%'],
-            data: this.SelfData.sort(function(a, b) {
-              return a.value - b.value
-            }),
-            roseType: 'radius',
-            label: {
-              textStyle: {
-                fontSize: 25,
-                fontStyle: 'oblique',
-                fontWeight: 'bolder'
-              },
-              color: 'rgba(251, 238, 230, 0.9)'
-            },
-            labelLine: {
-              lineStyle: {
-                color: 'rgba(251, 238, 230, 0.9)'
-              },
-              smooth: 0.2,
-              length: 10,
-              length2: 20
-            },
-            itemStyle: {
-              color: '#c23531',
-              shadowBlur: 200,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
-            },
-
-            animationType: 'scale',
-            animationEasing: 'elasticOut',
-            animationDelay(idx) {
-              return Math.random() * 200
-            }
-          }
-        ]
-      })
-      // RWD
-      window.onresize = function() {
-        myChart.resize()
+    CheckoutSkillExp() {
+      this.ExpSkill = !this.ExpSkill
+    },
+    /**
+     * @description 輸入密碼要做的事
+     */
+    GoShowExp() {
+      if (this.SECRET.length === 4) {
+        $('#secretDialog').hide()
+        this.$refs.expcomponent.RecoverFilter()
+      } else {
+        this.$alert('<strong>請輸入 <i>4個字</i> 密碼</strong>', '注意', {
+          dangerouslyUseHTMLString: true
+        })
       }
     }
   }
@@ -125,6 +79,11 @@ export default {
 
 <style lang="scss" scoped>
 #AboutSkill {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+#AboutExpLiquid {
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -164,5 +123,13 @@ export default {
 .custom-icon:hover {
   cursor: pointer;
   color: #00ffdc;
+}
+/** 密碼彈出視窗 */
+#secretDialog {
+  position: absolute;
+  display: flex;
+  top: 45vh;
+  left: 40vw;
+  color: rgba(0, 0, 0, 0);
 }
 </style>

@@ -1,51 +1,97 @@
 <template>
-  <div id="app">
-    <el-menu
-      :collapse="isCollapse"
-      @close="handleClose"
-      @open="handleOpen"
-      default-active="1-5-1"
-      class="el-menu-vertical"
-    >
-      <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-headset"></i>
-          <span slot="title">音樂</span>
-        </template>
-        <el-menu-item-group>
-          <el-menu-item index="1-1">
-            <nuxt-link to="/Piano">鋼琴</nuxt-link>
-          </el-menu-item>
-          <el-menu-item index="1-2"
-            ><nuxt-link to="Metronome">節拍器</nuxt-link></el-menu-item
-          >
-        </el-menu-item-group>
-      </el-submenu>
-      <el-menu-item index="2">
-        <nuxt-link to="/Photo">
-          <i class="el-icon-camera"></i>
-          <span slot="title">Photo</span>
-        </nuxt-link>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <nuxt-link to="/Self">
-          <i class="el-icon-s-custom"></i>
-          <span slot="title">About Me</span>
-        </nuxt-link>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <nuxt-link to="/Movie">
-          <i class="el-icon-video-camera"></i>
-          <span slot="title">Movie</span>
-        </nuxt-link>
-      </el-menu-item>
-      <el-menu-item index="5">
-        <nuxt-link to="/">
-          <i class="el-icon-s-home"></i>
-          <span slot="title">Home</span>
-        </nuxt-link>
-      </el-menu-item>
-    </el-menu>
+  <div>
+    <div id="app">
+      <el-menu
+        :collapse="isCollapse"
+        @close="handleClose"
+        @open="handleOpen"
+        default-active="1-5-1"
+        class="el-menu-vertical"
+      >
+        <el-submenu index="1">
+          <template slot="title">
+            <i class="el-icon-headset"></i>
+            <span slot="title">音樂</span>
+          </template>
+          <el-menu-item-group>
+            <el-menu-item index="1-1">
+              <nuxt-link to="/Piano">鋼琴</nuxt-link>
+            </el-menu-item>
+            <el-menu-item index="1-2">
+              <nuxt-link to="Metronome">節拍器</nuxt-link>
+            </el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
+
+        <el-menu-item index="2">
+          <nuxt-link to="/Photo">
+            <i class="el-icon-camera"></i>
+            <span slot="title">Photo</span>
+          </nuxt-link>
+        </el-menu-item>
+
+        <el-menu-item index="3">
+          <nuxt-link to="/Self">
+            <i class="el-icon-s-custom"></i>
+            <span slot="title">About Me</span>
+          </nuxt-link>
+        </el-menu-item>
+
+        <el-menu-item index="4">
+          <nuxt-link to="/Movie">
+            <i class="el-icon-video-camera"></i>
+            <span slot="title">Movie</span>
+          </nuxt-link>
+        </el-menu-item>
+
+        <el-submenu index="5">
+          <template slot="title">
+            <i class="el-icon-s-promotion"></i>
+            <span slot="title">Contact</span>
+          </template>
+          <el-menu-item-group>
+            <el-menu-item index="5-1">
+              <a href="https://github.com/liugoldent" style="color:blue">
+                <font-awesome-icon
+                  :icon="['fab', 'github-square']"
+                  class="icon alt"
+                />
+                <span slot="title">Github</span>
+              </a>
+            </el-menu-item>
+            <el-menu-item index="5-2">
+              <a
+                href="https://www.linkedin.com/in/guan-ting-liu-2016a1109/"
+                style="color:blue"
+              >
+                <font-awesome-icon
+                  :icon="['fab', 'linkedin']"
+                  class="icon alt"
+                />
+                <span slot="title">Linkedin</span>
+              </a>
+            </el-menu-item>
+            <el-menu-item index="5-3">
+              <a href="mailto:liugoldent@gmail.com" style="color:blue">
+                <font-awesome-icon
+                  :icon="['fas', 'envelope-square']"
+                  class="icon alt"
+                />
+                <span slot="title">Email</span>
+              </a>
+            </el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
+
+        <el-menu-item index="6">
+          <nuxt-link to="/">
+            <i class="el-icon-s-home"></i>
+            <span slot="title">Home</span>
+          </nuxt-link>
+        </el-menu-item>
+      </el-menu>
+    </div>
+    <div id="LinkButton"></div>
   </div>
 </template>
 <style scoped>
