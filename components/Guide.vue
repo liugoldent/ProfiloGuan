@@ -15,7 +15,7 @@
           </template>
           <el-menu-item-group>
             <el-menu-item index="1-1">
-              <nuxt-link to="/Piano">鋼琴</nuxt-link>
+              <nuxt-link to="/Piano">{{ $t('links.english') }}</nuxt-link>
             </el-menu-item>
             <el-menu-item index="1-2">
               <nuxt-link to="Metronome">節拍器</nuxt-link>
@@ -90,8 +90,13 @@
           </nuxt-link>
         </el-menu-item>
       </el-menu>
+      <el-button id="globalicon" @click="ChangeLanguage" circle>
+        <font-awesome-icon
+          :icon="['fas', 'language']"
+          class="GlobalIcon icon alt"
+        />
+      </el-button>
     </div>
-    <div id="LinkButton"></div>
   </div>
 </template>
 <style scoped>
@@ -111,6 +116,13 @@
   opacity: 0.9;
   transform: scale(1.2, 1.2);
   transition: all 1s ease-out;
+}
+
+#globalicon {
+  margin-top: 2vh;
+}
+.GlobalIcon {
+  font-size: 18px;
 }
 </style>
 <script>
@@ -135,6 +147,9 @@ export default {
     },
     handleOpen() {
       console.log('3')
+    },
+    ChangeLanguage(){
+      this.$i18n.locale = 'fr';
     }
   }
 }

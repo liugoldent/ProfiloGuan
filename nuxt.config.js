@@ -4,9 +4,6 @@ const faviconPath =
     : '/favicon.ico'
 module.exports = {
   mode: 'universal',
-  /*
-   ** Headers of the page
-   */
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -26,32 +23,21 @@ module.exports = {
       }
     ]
   },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: '',
-  /*
-   ** Global CSS
-   */
+  loading: '~/components/loading.vue',
+  router: {
+    middleware: 'i18n'
+  },
   css: ['element-ui/lib/theme-chalk/index.css'],
-  /*
-   ** Plugins to load before mounting the App
-   */
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/echarts',
-    '~/plugins/font-awesome'
+    '~/plugins/font-awesome',
+    '@/plugins/i18n.js'
   ],
-  /*
-   ** Nuxt.js dev-modules
-   */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
-  ],
-  /*
-   ** Nuxt.js modules
-   */
+  generate: {
+    routes: ['/', '/about', '/fr', '/fr/about']
+  },
+  buildModules: ['@nuxtjs/eslint-module'],
   modules: ['nuxt-fontawesome'],
   axios: {
     progress: true,
@@ -60,10 +46,8 @@ module.exports = {
     baseURL: 'http://api.themoviedb.org/3/'
   },
   fontawesome: {
-    // icon 的標籤使用 <fa>，這邊不設定就會依照 plugin 裡的設定<font-awesome-icon>
     component: 'fa',
     imports: [
-      // 引入 fas 所有的icon
       {
         set: '@fortawesome/free-solid-svg-icons',
         icons: ['fas']
@@ -78,29 +62,9 @@ module.exports = {
       }
     ]
   },
-  /*
-   ** Build configuration
-   */
   build: {
     vendor: ['jquery'],
-    // extend(config, { isDev, isClient, isServer }) {
-    //   if (isDev && isClient) {
-    //     // expose jquery to global
-    //     config.module.rules.push({
-    //       test: require.resolve('jquery'),
-    //       use: [
-    //         {
-    //           loader: 'expose-loader',
-    //           options: '$'
-    //         }
-    //       ]
-    //     })
-    //   }
-    // },
     transpile: [/^element-ui/],
-    /*
-     ** You can extend webpack config here
-     */
     loaders: {
       vue: {
         transformAssetUrls: {
@@ -108,18 +72,13 @@ module.exports = {
         }
       }
     },
-
-    // eslint-disable-next-line no-dupe-keys
     extend(config, ctx) {
-      // Run ESLint on save
       const vueLoader = config.module.rules.find(
         (loader) => loader.loader === 'vue-loader'
       )
-      /* 把audio标签在编译时转成src属性 */
       vueLoader.options.transformToRequire = {
         audio: 'src'
       }
-
       config.module.rules.push({
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
