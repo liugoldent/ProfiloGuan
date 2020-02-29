@@ -56,7 +56,7 @@
         </div>
         <audio
           id="Beat"
-          src="../static/BeatSound/Beat.mp3"
+          src="~/static/BeatSound/Beat.mp3"
           class="MusicAudio"
           type="audio/mpeg"
         ></audio>
@@ -66,9 +66,9 @@
 </template>
 
 <script>
-import Guide from '../components/Guide'
-import ThreeHistogram from './Metronome/ThreeHistogram'
-import FourHistogram from './Metronome/FourHistogram'
+import ThreeHistogram from './ThreeHistogram'
+import FourHistogram from './FourHistogram'
+import Guide from '~/components/Guide'
 export default {
   name: 'Metronome',
   components: {

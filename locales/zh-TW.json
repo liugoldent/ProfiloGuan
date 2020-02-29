@@ -1,0 +1,39 @@
+{
+  "SystemCommon":{
+    "OK":"確定"
+  },
+  "title": {
+    "music": "音樂",
+    "photo": "照片",
+    "aboutMe": "關於我",
+    "movie": "電影",
+    "contact":"聯絡",
+    "home":"首頁"
+  },
+  "language": {
+    "status" : "中文"
+  },
+  "piano":{
+    "piano":"鋼琴",
+    "Metronome":"節拍器"
+  },
+  "pianoDetail":{
+    "Interval":"音程",
+    "Chord":"和弦",
+    "CChord":"C和弦",
+    "FChord":"F和弦",
+    "GChord":"G和弦",
+    "minorSecond":"小二度",
+    "majorSecond":"大二度",
+    "minorThird":"小三度",
+    "majorThird":"大三度",
+    "perfectFourth":"完全四度",
+    "AugmentedFourth":"增四度",
+    "PerfectFifth":"完全五度",
+    "minorSixth":"小六度",
+    "majorSixth":"大六度",
+    "minorSeventh":"小七度",
+    "majorSeventh":"大七度",
+    "PerfectOctave":"完全八度"
+  }
+}

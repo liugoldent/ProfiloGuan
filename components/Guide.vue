@@ -11,14 +11,14 @@
         <el-submenu index="1">
           <template slot="title">
             <i class="el-icon-headset"></i>
-            <span slot="title">音樂</span>
+            <span slot="title">{{ $t('title.music') }}</span>
           </template>
           <el-menu-item-group>
             <el-menu-item index="1-1">
-              <nuxt-link to="/Piano">{{ $t('links.english') }}</nuxt-link>
+              <nuxt-link to="/Piano">{{ $t('piano.piano') }}</nuxt-link>
             </el-menu-item>
             <el-menu-item index="1-2">
-              <nuxt-link to="Metronome">節拍器</nuxt-link>
+              <nuxt-link to="/Metronome">{{ $t('piano.Metronome') }}</nuxt-link>
             </el-menu-item>
           </el-menu-item-group>
         </el-submenu>
@@ -26,28 +26,28 @@
         <el-menu-item index="2">
           <nuxt-link to="/Photo">
             <i class="el-icon-camera"></i>
-            <span slot="title">Photo</span>
+            <span slot="title">{{ $t('title.photo') }}</span>
           </nuxt-link>
         </el-menu-item>
 
         <el-menu-item index="3">
           <nuxt-link to="/Self">
             <i class="el-icon-s-custom"></i>
-            <span slot="title">About Me</span>
+            <span slot="title">{{ $t('title.aboutMe') }}</span>
           </nuxt-link>
         </el-menu-item>
 
         <el-menu-item index="4">
           <nuxt-link to="/Movie">
             <i class="el-icon-video-camera"></i>
-            <span slot="title">Movie</span>
+            <span slot="title">{{ $t('title.movie') }}</span>
           </nuxt-link>
         </el-menu-item>
 
         <el-submenu index="5">
           <template slot="title">
             <i class="el-icon-s-promotion"></i>
-            <span slot="title">Contact</span>
+            <span slot="title">{{ $t('title.contact') }}</span>
           </template>
           <el-menu-item-group>
             <el-menu-item index="5-1">
@@ -86,16 +86,33 @@
         <el-menu-item index="6">
           <nuxt-link to="/">
             <i class="el-icon-s-home"></i>
-            <span slot="title">Home</span>
+            <span slot="title">{{ $t('title.home') }}</span>
           </nuxt-link>
         </el-menu-item>
       </el-menu>
-      <el-button id="globalicon" @click="ChangeLanguage" circle>
-        <font-awesome-icon
-          :icon="['fas', 'language']"
-          class="GlobalIcon icon alt"
-        />
-      </el-button>
+
+      <el-menu
+        :collapse="isCollapse"
+        default-active="1-5-1"
+        class="el-menu-vertical globalicon"
+      >
+        <el-submenu index="1">
+          <template slot="title">
+            <font-awesome-icon
+              :icon="['fas', 'language']"
+              class="GlobalIcon icon alt"
+            />
+          </template>
+          <el-menu-item-group>
+            <el-menu-item index="5-2">
+              <span slot="title" @click="ChangeLanguage('tw')">中文</span>
+            </el-menu-item>
+            <el-menu-item index="5-2">
+              <span slot="title" @click="ChangeLanguage('en')">English</span>
+            </el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
+      </el-menu>
     </div>
   </div>
 </template>
@@ -118,7 +135,7 @@
   transition: all 1s ease-out;
 }
 
-#globalicon {
+.globalicon {
   margin-top: 2vh;
 }
 .GlobalIcon {
@@ -148,8 +165,8 @@ export default {
     handleOpen() {
       console.log('3')
     },
-    ChangeLanguage(){
-      this.$i18n.locale = 'fr';
+    ChangeLanguage(LangStatus) {
+      this.$i18n.locale = LangStatus
     }
   }
 }

@@ -43,9 +43,9 @@
     <el-dialog :visible.sync="dialogVisible" title="提示" width="15%" top="15%">
       <span>{{ PleaseInputKey }}</span>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false" type="primary"
-          >確定</el-button
-        >
+        <el-button @click="dialogVisible = false" type="primary">{{
+          $t('SystemCommon.OK')
+        }}</el-button>
       </span>
     </el-dialog>
     <el-drawer
@@ -88,7 +88,7 @@ import $ from 'jquery'
 import Vue from 'vue'
 import Notifications from 'vue-notification/dist/ssr.js'
 import axios from 'axios'
-import Guide from '../components/Guide'
+import Guide from '~/components/Guide'
 Vue.use(Notifications)
 
 export default {

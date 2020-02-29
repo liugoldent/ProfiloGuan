@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import Guide from '../components/Guide'
+import Guide from '~/components/Guide'
 import PhotoLink from '~/static/Photo.json'
 export default {
   name: 'Movie',

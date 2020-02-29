@@ -1,16 +1,39 @@
 {
-  "links": {
-    "home": "Home",
-    "about": "About",
-    "english": "English version",
-    "french": "French version"
+  "SystemCommon":{
+    "OK":"確定"
   },
-  "home": {
-    "title": "Welcome",
-    "introduction": "This is an introduction in English."
+  "title": {
+    "music": "Music",
+    "photo": "Photo",
+    "aboutMe": "About Me",
+    "movie": "Movie",
+    "contact":"Contact",
+    "home":"Home"
   },
-  "about": {
-    "title": "About",
-    "introduction": "This page is made to give you more informations."
+  "language": {
+    "status" : "中文"
+  },
+  "piano":{
+    "piano":"Piano",
+    "Metronome":"Metronome"
+  },
+  "pianoDetail":{
+    "Interval":"Interval",
+    "Chord":"Chord",
+    "CChord":"C Chord",
+    "FChord":"F Chord",
+    "GChord":"G Chord",
+    "minorSecond":"minor Second",
+    "majorSecond":"Major Second",
+    "minorThird":"minor Third",
+    "majorThird":"Major Third",
+    "perfectFourth":"Perfect Fourth",
+    "AugmentedFourth":"Augmented Fourth",
+    "PerfectFifth":"Perfect Fifth",
+    "minorSixth":"minor Sixth",
+    "majorSixth":"Major Sixth",
+    "minorSeventh":"minor Seventh",
+    "majorSeventh":"Major Seventh",
+    "PerfectOctave":"Perfect Octave"
   }
 }

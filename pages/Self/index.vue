@@ -31,9 +31,9 @@
 
 <script>
 import $ from 'jquery'
-import Guide from '../components/Guide'
-import Skill from './Self/Skill'
-import Exp from './Self/Exp'
+import Skill from './Skill'
+import Exp from './Exp'
+import Guide from '~/components/Guide'
 export default {
   name: 'FourMetronome',
   components: {

@@ -2,7 +2,7 @@
   <div class="buttonposition">
     <el-tooltip class="item" effect="dark" content="高八度" placement="top">
       <button @click="ChangeHighLow('Higher')" class="iconbuttonup">
-        <NuxtLink to="/PianoHigher">
+        <NuxtLink to="/Piano/PianoHigher">
           <i class="custom-icon el-icon-arrow-up"></i>
         </NuxtLink>
       </button>
@@ -16,7 +16,7 @@
     </el-tooltip>
     <el-tooltip class="item" effect="dark" content="低八度" placement="bottom">
       <button @click="ChangeHighLow('Lower')" class="iconbuttondown">
-        <NuxtLink to="/PianoLower">
+        <NuxtLink to="/Piano/PianoLower">
           <i class="custom-icon el-icon-arrow-down"></i>
         </NuxtLink>
       </button>

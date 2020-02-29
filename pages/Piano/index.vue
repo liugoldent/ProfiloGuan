@@ -15,7 +15,8 @@
           >
             <div class="RightBlack">
               <p class="whiteFont">
-                A<audio
+                A
+                <audio
                   id="KeyA"
                   src="@/static/PianoSound/Single/Central/LowFa.mp3"
                   class="MusicAudio"
@@ -63,7 +64,8 @@
           >
             <div class="BlackKeyBoard">
               <p class="BlackFont">
-                E<audio
+                E
+                <audio
                   id="KeyE"
                   src="@/static/PianoSound/Single/Central/LowSharpSol.mp3"
                   class="MusicAudio"
@@ -80,7 +82,8 @@
           >
             <div class="Middle">
               <p class="whiteFont">
-                D<audio
+                D
+                <audio
                   id="KeyD"
                   src="@/static/PianoSound/Single/Central/LowLa.mp3"
                   class="MusicAudio"
@@ -92,7 +95,8 @@
           <el-tooltip class="item" effect="light" content="#La" placement="top">
             <div class="BlackKeyBoard">
               <p class="BlackFont">
-                R<audio
+                R
+                <audio
                   id="KeyR"
                   src="@/static/PianoSound/Single/Central/LowSharpLa.mp3"
                   class="MusicAudio"
@@ -109,7 +113,8 @@
           >
             <div class="LeftBlack">
               <p class="whiteFont">
-                F<audio
+                F
+                <audio
                   id="KeyF"
                   src="@/static/PianoSound/Single/Central/LowSi.mp3"
                   class="MusicAudio"
@@ -140,7 +145,8 @@
           <el-tooltip class="item" effect="light" content="#Do" placement="top">
             <div class="BlackKeyBoard">
               <p class="BlackFont">
-                U<audio
+                U
+                <audio
                   id="KeyU"
                   src="@/static/PianoSound/Single/Central/SharpDo.mp3"
                   class="MusicAudio"
@@ -157,7 +163,8 @@
           >
             <div class="Middle">
               <p class="whiteFont">
-                J<audio
+                J
+                <audio
                   id="KeyJ"
                   src="@/static/PianoSound/Single/Central/Re.mp3"
                   class="MusicAudio"
@@ -169,7 +176,8 @@
           <el-tooltip class="item" effect="light" content="#Re" placement="top">
             <div class="BlackKeyBoard">
               <p class="BlackFont">
-                I<audio
+                I
+                <audio
                   id="KeyI"
                   src="@/static/PianoSound/Single/Central/SharpRe.mp3"
                   class="MusicAudio"
@@ -186,7 +194,8 @@
           >
             <div class="LeftBlack">
               <p class="whiteFont">
-                K<audio
+                K
+                <audio
                   id="KeyK"
                   src="@/static/PianoSound/Single/Central/Mi.mp3"
                   class="MusicAudio"
@@ -203,7 +212,8 @@
           >
             <div class="RightBlack">
               <p class="whiteFont">
-                L<audio
+                L
+                <audio
                   id="KeyL"
                   src="@/static/PianoSound/Single/Central/Fa.mp3"
                   class="MusicAudio"
@@ -215,7 +225,8 @@
           <el-tooltip class="item" effect="light" content="#Fa" placement="top">
             <div class="BlackKeyBoard">
               <p class="BlackFont">
-                O<audio
+                O
+                <audio
                   id="KeyO"
                   src="@/static/PianoSound/Single/Central/SharpFa.mp3"
                   class="MusicAudio"
@@ -232,7 +243,8 @@
           >
             <div class="Middle">
               <p class="whiteFont">
-                ;<audio
+                ;
+                <audio
                   id="Semicolon"
                   src="@/static/PianoSound/Single/Central/Sol.mp3"
                   class="MusicAudio"
@@ -249,7 +261,8 @@
           >
             <div class="BlackKeyBoard">
               <p class="BlackFont">
-                P<audio
+                P
+                <audio
                   id="KeyP"
                   src="@/static/PianoSound/Single/Central/SharpSol.mp3"
                   class="MusicAudio"
@@ -266,7 +279,8 @@
           >
             <div class="LeftBlack">
               <p class="whiteFont">
-                '<audio
+                '
+                <audio
                   id="Quote"
                   src="@/static/PianoSound/Single/Central/La.mp3"
                   class="MusicAudio"
@@ -280,7 +294,7 @@
       <!-- 音程與度數的切換 -->
       <div class="SwitchbuttonDiv">
         <div class="SwitchText">
-          <p id="Interval">和弦</p>
+          <p id="Interval">{{ $t('pianoDetail.Chord') }}</p>
         </div>
         <div class="SwitchText">
           <el-switch
@@ -292,7 +306,7 @@
           ></el-switch>
         </div>
         <div class="SwitchText">
-          <p id="Degree">音程</p>
+          <p id="Degree">{{ $t('pianoDetail.Interval') }}</p>
         </div>
       </div>
       <!-- 底下的button -->
@@ -306,11 +320,12 @@
                   v-if="ShowObj.ShowShiftLeft"
                   :disabled="DisableObj.DisableShiftLeft"
                   round
-                  >小二度</el-button
+                  >{{ $t('pianoDetail.minorSecond') }}</el-button
                 >
               </transition>
               <p class="DegreeP">
-                Left Shift<audio
+                Left Shift
+                <audio
                   id="ShiftLeft"
                   src="@/static/PianoSound/Degree/Central/S2.mp3"
                   class="MusicAudio"
@@ -325,9 +340,9 @@
                   v-if="ShowObj.ShowKeyZ"
                   :disabled="DisableObj.DisableKeyZ"
                   round
-                  >大二度</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.majorSecond') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
                 Z
                 <audio
@@ -345,9 +360,9 @@
                   v-if="ShowObj.ShowKeyX"
                   :disabled="DisableObj.DisableKeyX"
                   round
-                  >小三度</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.minorThird') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
                 X
                 <audio
@@ -365,11 +380,12 @@
                   v-if="ShowObj.ShowKeyC"
                   :disabled="DisableObj.DisableKeyC"
                   round
-                  >大三度</el-button
+                  >{{ $t('pianoDetail.majorThird') }}</el-button
                 >
               </transition>
               <p class="DegreeP">
-                C<audio
+                C
+                <audio
                   id="KeyC"
                   src="@/static/PianoSound/Degree/Central/B3.mp3"
                   class="MusicAudio"
@@ -384,9 +400,9 @@
                   v-if="ShowObj.ShowKeyV"
                   :disabled="DisableObj.DisableKeyV"
                   round
-                  >完全四度</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.perfectFourth') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
                 V
                 <audio
@@ -404,9 +420,9 @@
                   v-if="ShowObj.ShowKeyB"
                   :disabled="DisableObj.DisableKeyB"
                   round
-                  >增四度</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.AugmentedFourth') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
                 B
                 <audio
@@ -424,11 +440,12 @@
                   v-if="ShowObj.ShowKeyN"
                   :disabled="DisableObj.DisableKeyN"
                   round
-                  >完全五度</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.PerfectFifth') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
-                N<audio
+                N
+                <audio
                   id="KeyN"
                   src="@/static/PianoSound/Degree/Central/F5.mp3"
                   class="MusicAudio"
@@ -443,11 +460,12 @@
                   v-if="ShowObj.ShowKeyM"
                   :disabled="DisableObj.DisableKeyM"
                   round
-                  >小六度</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.minorSixth') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
-                M<audio
+                M
+                <audio
                   id="KeyM"
                   src="@/static/PianoSound/Degree/Central/S6.mp3"
                   class="MusicAudio"
@@ -462,9 +480,9 @@
                   v-if="ShowObj.ShowComma"
                   :disabled="DisableObj.DisableComma"
                   round
-                  >大六度</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.majorSixth') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
                 &lt;
                 <audio
@@ -482,9 +500,9 @@
                   v-if="ShowObj.ShowPeriod"
                   :disabled="DisableObj.DisablePeriod"
                   round
-                  >小七度</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.minorSeventh') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
                 &gt;
                 <audio
@@ -502,9 +520,9 @@
                   v-if="ShowObj.ShowSlash"
                   :disabled="DisableObj.DisableSlash"
                   round
-                  >大七度</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.majorSeventh') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
                 /
                 <audio
@@ -522,9 +540,9 @@
                   v-if="ShowObj.ShowShiftRight"
                   :disabled="DisableObj.DisableShiftRight"
                   round
-                  >完全八度</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.PerfectOctave') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
                 Right Shift
                 <audio
@@ -547,9 +565,9 @@
                   v-if="ShowObj.ShowDigit5"
                   :disabled="DisableObj.DisableDigit5"
                   round
-                  >C和弦</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.CChord') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
                 5
                 <audio
@@ -567,9 +585,9 @@
                   v-if="ShowObj.ShowDigit6"
                   :disabled="DisableObj.DisableDigit6"
                   round
-                  >F和弦</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.FChord') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
                 6
                 <audio
@@ -587,9 +605,9 @@
                   v-if="ShowObj.ShowDigit7"
                   :disabled="DisableObj.DisableDigit7"
                   round
-                  >G和弦</el-button
-                ></transition
-              >
+                  >{{ $t('pianoDetail.GChord') }}</el-button
+                >
+              </transition>
               <p class="DegreeP">
                 7
                 <audio
@@ -613,8 +631,8 @@
 
 <script>
 import $ from 'jquery'
-import Guide from '@/components/Guide'
-import HiLowControl from '@/components/PianoHighLowControl.vue'
+import Guide from '~/components/Guide'
+import HiLowControl from '~/components/PianoHighLowControl.vue'
 
 export default {
   name: 'Piano',
