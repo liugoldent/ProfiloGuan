@@ -908,7 +908,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap');
 $Whitekeyboardwidth: 7vw;
 $WhitekeyboardHeight: 50vh;
-$KeyBoardMarginTop: 18vh;
+$KeyBoardMarginTop: 10vh;
 $KeyBoardMarginLeft: 13.5vw;
 .All {
   height: 100vh;
@@ -1055,13 +1055,16 @@ $KeyBoardMarginLeft: 13.5vw;
 /**度數的按鈕控制 */
 #DegreeButton {
   position: relative;
+  top: -5vh;
   margin: 0px auto;
 }
 .ButtonComp {
   display: inline-block;
+  margin-top: 5vh;
 }
 /**和弦的按鈕控制 */
 #IntervalButton {
+  top: -5vh;
   position: relative;
   margin: 0px auto;
 }

@@ -3,8 +3,8 @@ export const state = () => ({
   locale: 'tw'
 })
 export const action = {
-  SET_LANG({ commit }) {
-    commit('SET_LANG')
+  SET_LANG({ commit }, payload) {
+    commit('SET_LANG', payload)
   }
 }
 export const mutation = {

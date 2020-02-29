@@ -30,7 +30,7 @@
 .buttonposition {
   position: absolute;
   top: 30vh;
-  right: 5vw;
+  right: 3vw;
 }
 .iconbuttonup {
   width: 3vw;
@@ -66,6 +66,7 @@
   cursor: pointer;
   // transform: translateX(2vh);
 }
+// 度數的顯示
 #Showrange {
   text-align: center;
   margin-top: -23vh;
@@ -73,6 +74,7 @@
   z-index: 2;
   font-size: 50px;
   font-family: 'Kaushan Script', cursive;
+  -webkit-text-stroke: 1px yellow;
 }
 </style>
 <script>
